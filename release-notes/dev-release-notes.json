@@ -31,6 +31,22 @@
         }
       ],
       "defects": []
+    },
+    {
+      "timestamp": "2026-01-09T01:35:14Z",
+      "stories": [
+        {
+          "description": "feat: fixing branch info",
+          "branch": "feat/test-commit",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "chore: update release notes [skip ci]",
+          "branch": "unknown",
+          "author": "github-actions[bot]"
+        }
+      ],
+      "defects": []
     }
   ]
 }
