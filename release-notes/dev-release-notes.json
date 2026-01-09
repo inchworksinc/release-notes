@@ -2,6 +2,23 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-09T19:17:34Z",
+      "revision": "06785970fd7ebdbf202f4e8e62612ed9f1f7507a",
+      "stories": [
+        {
+          "description": "commit 11",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "commit 10",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-09T19:04:20Z",
       "revision": "ff3f8dfe69ab9270f797f4da5750beac8533d467",
       "stories": [
@@ -67752,18 +67769,6 @@
       ],
       "defects": [],
       "revision": "85f5aaeba0ef7a9ec682218ffdebcc9c0462cd7e"
-    },
-    {
-      "timestamp": "2025-10-13 17:48:38",
-      "stories": [
-        {
-          "description": "GSS-30710 : PO_PE - UAT Issue : Quote Error when reapplying Ins Score (#7107)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Karthik Sakthivel"
-        }
-      ],
-      "defects": [],
-      "revision": "c518acf946bb6c9e9d749c17b366fa451d74637e"
     }
   ]
 }
