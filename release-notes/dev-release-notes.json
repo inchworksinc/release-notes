@@ -1,0 +1,20 @@
+{
+  "builds": [
+    {
+      "timestamp": "2026-01-09T01:26:32Z",
+      "stories": [
+        {
+          "description": "feat: Initial commit",
+          "branch": "unknown",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: Initial commit",
+          "branch": "unknown",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    }
+  ]
+}
