@@ -61,9 +61,8 @@ while IFS='|' read -r sha author message; do
     echo "Processing: $sha"
 
     # Get PR branch using GitHub CLI
-    branch=$(gh pr list --search "$sha" --state merged --json headRefName \
-        -q '.[0].headRefName // "unknown"')
-
+    branch=$(gh api "repos/{owner}/{repo}/commits/$sha/pulls" \
+        --jq '.[0].head.ref // "unknown"' 2>/dev/null || echo "unknown")
     # Create entry
     entry=$(jq -nc \
         --arg desc "$message" \
