@@ -89,6 +89,16 @@ while IFS='|' read -r sha author message; do
         --arg author "$author" \
         '{description: $desc, branch: $branch, author: $author}')
 
+    # Convert to uppercase for comparison
+    message_upper=$(echo "$message" | tr '[:lower:]' '[:upper:]')
+      if [[ "$message_upper" =~ DEFECT ]]; then
+        echo "  -> Categorized as DEFECT"
+        defects=$(echo "$defects" | jq -c --argjson e "$entry" '. + [$e]')
+       else
+         echo "  -> Categorized as STORY"
+         stories=$(echo "$stories" | jq -c --argjson e "$entry" '. + [$e]')
+      fi
+
     # Categorize: defect if message starts with "DEFECT" (case-insensitive)
     if echo "$message" | grep -iq "^defect"; then
         defects=$(echo "$defects" | jq -c --argjson e "$entry" '. + [$e]')
@@ -126,7 +136,7 @@ fi
 # Append new build and keep last 50
 updated=$(echo "$existing" | jq \
     --argjson build "$new_build" \
-    '.builds += [$build] | .builds = .builds[-50:]')
+    '.builds = [$build] + .builds | .builds = .builds[:50]')
 
 # Save
 echo "$updated" > "$OUTPUT_PATH"
