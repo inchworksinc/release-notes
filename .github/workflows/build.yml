@@ -21,30 +21,16 @@ jobs:
         with:
           fetch-depth: 0  # Full history needed for git log
 
-      - name: Determine build type
-        id: build-type
-        run: |
-          if [[ "${{ github.ref }}" == refs/heads/main ]]; then
-            echo "type=daily" >> $GITHUB_OUTPUT
-            echo "output_file=dev-release-notes.json" >> $GITHUB_OUTPUT
-          elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
-            echo "type=release" >> $GITHUB_OUTPUT
-            echo "output_file=${{ github.ref_name }}-release-notes.json" >> $GITHUB_OUTPUT
-          else
-            echo "Unsupported branch"
-            exit 1
-          fi
-
-      - name: Generate release notes
+      ### Trunk build release notes generation ###
+      - name: Generate trunk build release notes
+        if: startsWith(github.ref_name, 'main')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BUILD_TYPE: ${{ steps.build-type.outputs.type }}
           OUTPUT_FILE: ${{ steps.build-type.outputs.output_file }}
-          BUILD_BRANCH: ${{ github.ref_name }}
         run: |
-          bash .github/scripts/generate-notes.sh
+          bash .github/scripts/generate-trunk-build-notes.sh
 
-      - name: Commit and push release notes
+      - name: Commit and push trunk release notes
         if: startsWith(github.ref_name, 'main')
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -58,6 +44,15 @@ jobs:
             git commit -m "chore: update release notes [skip ci]"
             git push
           fi
+
+      ### Release build release notes generation ###
+      - name: Generate release build release notes
+        if: startsWith(github.ref_name, 'release/**')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_VERSION: v$(cat ./version.json | jq -r '.version')
+        run: |
+          bash .github/scripts/generate-release-build-notes.sh
 
       - name: Uploading application and infrastructure artifacts to Github Releases
         if: startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'hotfix')
