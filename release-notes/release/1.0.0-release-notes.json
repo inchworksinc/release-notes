@@ -1,0 +1,112 @@
+{
+  "builds": [
+    {
+      "timestamp": "2026-01-09T16:23:36Z",
+      "revision": "32a797302f36eb4ff019b8995d07d842e5d022a7",
+      "stories": [
+        {
+          "description": "fix: using the same process for commit rang",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: commit 5",
+          "branch": "feature/commit5",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: Commit 4",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: removing trigger",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: Updating release notes",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: Adding revision",
+          "branch": "fix/revision-setup",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: testing 1",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Delete release-notes directory",
+          "branch": "main",
+          "author": "Anjaneya Datla"
+        },
+        {
+          "description": "fix: fixing unknown commit message",
+          "branch": "feat/test-commit",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Delete release-notes directory",
+          "branch": "main",
+          "author": "Anjaneya Datla"
+        },
+        {
+          "description": "Delete release-notes/dev-release-notes.json",
+          "branch": "main",
+          "author": "Anjaneya Datla"
+        },
+        {
+          "description": "fix: skipping skip ci commits",
+          "branch": "feat/test-commit",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: fixing branch info",
+          "branch": "feat/test-commit",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: adding commit",
+          "branch": "feat/test-commit",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: Initial commit",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: Initial commit",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": [
+        {
+          "description": "Defect commit 6",
+          "branch": "fix/commitdefect-6",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: DEFECT pickup",
+          "branch": "fix/test2",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: DEFECT pickup",
+          "branch": "fix/test2",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: DEFECT 12312 test",
+          "branch": "fix/test2",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ]
+    }
+  ]
+}

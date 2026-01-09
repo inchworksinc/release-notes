@@ -11,3 +11,5 @@ commit four
 commit five
 
 commit six defect
+
+commit seven

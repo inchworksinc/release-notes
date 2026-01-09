@@ -36,15 +36,17 @@ jobs:
           fi
 
       - name: Generate release notes
+        if: startsWith(github.ref_name, 'main')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BUILD_TYPE: ${{ steps.build-type.outputs.type }}
           OUTPUT_FILE: ${{ steps.build-type.outputs.output_file }}
           BUILD_BRANCH: ${{ github.ref_name }}
         run: |
-          bash .github/scripts/generate-release-notes.sh
+          bash .github/scripts/generate-notes.sh
 
       - name: Commit and push release notes
+        if: startsWith(github.ref_name, 'main')
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -57,3 +59,13 @@ jobs:
             git commit -m "chore: update release notes [skip ci]"
             git push
           fi
+
+      - name: Uploading application and infrastructure artifacts to Github Releases
+        if: startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'hotfix')
+        uses: ./.github/actions/create-update-release
+        with:
+          # Added a 'v' to the tag name to follow agreed standards for release versioning (e.g. v1.0.0)
+          name: v$(cat ./version.json | jq -r '.version')
+          target: ${{ github.ref_name }}
+          artifacts: version.json prod-release-notes
+          artifact-name: app-package
