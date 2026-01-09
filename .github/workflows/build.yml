@@ -26,7 +26,7 @@ jobs:
         if: startsWith(github.ref_name, 'main')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT_FILE: trunk-release-notes.json
+          OUTPUT_FILE: release-notes/trunk-release-notes.json
         run: |
           bash .github/scripts/generate-trunk-build-notes.sh
 
