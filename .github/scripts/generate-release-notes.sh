@@ -99,13 +99,6 @@ while IFS='|' read -r sha author message; do
          stories=$(echo "$stories" | jq -c --argjson e "$entry" '. + [$e]')
       fi
 
-    # Categorize: defect if message starts with "DEFECT" (case-insensitive)
-    if echo "$message" | grep -iq "^defect"; then
-        defects=$(echo "$defects" | jq -c --argjson e "$entry" '. + [$e]')
-    else
-        stories=$(echo "$stories" | jq -c --argjson e "$entry" '. + [$e]')
-    fi
-
 done < <(git log --no-merges --format="%H|%an|%s" ${START_REF}..${END_REF})
 
 story_count=$(echo "$stories" | jq 'length')
