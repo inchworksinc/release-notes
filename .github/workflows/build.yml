@@ -1,0 +1,58 @@
+name: Generate Release Notes
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Need write permission to commit back to repo
+  pull-requests: read  # Need to read PR information
+
+jobs:
+  generate-release-notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed for git log
+
+      - name: Determine build type
+        id: build-type
+        run: |
+          if [[ "${{ github.ref }}" == refs/heads/main ]]; then
+            echo "type=daily" >> $GITHUB_OUTPUT
+            echo "output_file=dev-release-notes.json" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
+            echo "type=release" >> $GITHUB_OUTPUT
+            echo "output_file=prod-release-notes.json" >> $GITHUB_OUTPUT
+          else
+            echo "Unsupported branch"
+            exit 1
+          fi
+
+      - name: Generate release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_TYPE: ${{ steps.build-type.outputs.type }}
+          OUTPUT_FILE: ${{ steps.build-type.outputs.output_file }}
+        run: |
+          bash .github/scripts/generate-release-notes.sh
+
+      - name: Commit and push release notes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add release-notes/${{ steps.build-type.outputs.output_file }}
+
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update release notes [skip ci]"
+            git push
+          fi
