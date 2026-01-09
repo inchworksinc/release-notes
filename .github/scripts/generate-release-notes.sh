@@ -111,11 +111,13 @@ echo "Categorized: ${story_count} stories, ${defect_count} defects"
 
 # Create new build entry
 timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+revision=$(git rev-parse HEAD)
 new_build=$(jq -nc \
     --arg ts "$timestamp" \
+    --arg rev "$revision" \
     --argjson stories "$stories" \
     --argjson defects "$defects" \
-    '{timestamp: $ts, stories: $stories, defects: $defects}')
+    '{timestamp: $ts, revision: $rev, stories: $stories, defects: $defects}')
 
 # Load existing or create new
 mkdir -p "$(dirname "$OUTPUT_PATH")"
