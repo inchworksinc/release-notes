@@ -57,6 +57,12 @@ defects="[]"
 # Get commits excluding merges
 while IFS='|' read -r sha author message; do
     [ -z "$sha" ] && continue
+    
+    # Skip commits with [skip ci] in the message
+    if echo "$message" | grep -iq "\[skip ci\]"; then
+        echo "Skipping commit with [skip ci]: $sha"
+        continue
+    fi
 
     echo "Processing: $sha"
 
