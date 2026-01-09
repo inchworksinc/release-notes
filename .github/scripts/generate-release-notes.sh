@@ -68,7 +68,20 @@ while IFS='|' read -r sha author message; do
 
     # Get PR branch using GitHub CLI
     branch=$(gh api "repos/{owner}/{repo}/commits/$sha/pulls" \
-        --jq '.[0].head.ref // "unknown"' 2>/dev/null || echo "unknown")
+         --jq '.[0].head.ref // ""' 2>/dev/null || echo "")
+
+        # If no PR found (direct commit), determine branch from git
+        if [ -z "$branch" ]; then
+            if git branch -r --contains "$sha" | grep -q "origin/main"; then
+                branch="main"
+            elif git branch -r --contains "$sha" | grep -q "origin/develop"; then
+                branch="develop"
+            else
+                # Get first remote branch containing this commit
+                branch=$(git branch -r --contains "$sha" | head -1 | sed 's/.*origin\///' | xargs)
+                    [ -z "$branch" ] && branch="unknown"
+            fi
+        fi
     # Create entry
     entry=$(jq -nc \
         --arg desc "$message" \
