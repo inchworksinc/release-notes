@@ -17,7 +17,7 @@ echo "Starting release notes generation (type: ${BUILD_TYPE})"
 
 if [ "$BUILD_TYPE" = "daily" ]; then
     # Daily build: Get last successful workflow run
-    START_REF=$(gh run list -w "release-notes.yml" -b main -s success -L 1 \
+    START_REF=$(gh run list -w "build.yml" -b main -s success -L 1 \
         --json headSha -q '.[0].headSha // ""')
 
     if [ -z "$START_REF" ]; then
