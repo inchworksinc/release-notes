@@ -1,0 +1,21 @@
+{
+  "builds": [
+    {
+      "timestamp": "2026-01-09T23:54:50Z",
+      "revision": "7f2fedcd206294fe00b3a3b05b2fd5cb89988433",
+      "stories": [
+        {
+          "description": "fix: Adding release notes generation steps",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: Adding release notes generation steps",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    }
+  ]
+}
