@@ -29,6 +29,7 @@ The action processes git commits, determines their source branches, categorizes 
 | Input | Description | Required | Default |
 |-------|-------------|----------|---------|
 | `RELEASE_VERSION` | The semantic version to use as revision for release builds (e.g., "5.0.6") | No | - |
+| `ASSET_PACKAGE_NAME` | Name of the package(.zip) which has the release notes (e.g., app-package.json)| No | - |
 | `OUTPUT_FILE` | The output file path for trunk release notes (relative to repo root) | No | - |
 | `GIT_TOKEN` | GitHub token for API authentication | **Yes** | - |
 
@@ -37,12 +38,13 @@ The action processes git commits, determines their source branches, categorizes 
 ### Basic Usage
 
 ```yaml
-- name: Generate Release Notes
+- name: Generate Release Notes for releases
   uses: ./.github/actions/generate-guidewire-releasenotes
   with:
     GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     OUTPUT_FILE: 'release-notes/dev-release-notes.json'
     RELEASE_VERSION: '5.0.6'
+    ASSET_PACKAGE_NAME: 'app-package.zip'
 ```
 
 ## Workflow Logic

@@ -6,6 +6,9 @@ inputs:
   RELEASE_VERSION: 
     description: The version of release to add as revision
     required: false
+  ASSET_PACKAGE_NAME: 
+    description: Name of the package which has the prod-release-notes.json file in the latest release
+    required: false
   OUTPUT_FILE: 
     description: The output file for trunk release notes
     required: false
@@ -49,5 +52,6 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.GIT_TOKEN }}
         RELEASE_VERSION: ${{ inputs.RELEASE_VERSION }}
+        PACKAGE_NAME: ${{ inputs.ASSET_PACKAGE_NAME }}
       run: |
         bash ${{ github.action_path }}/scripts/generate-release-build-notes.sh

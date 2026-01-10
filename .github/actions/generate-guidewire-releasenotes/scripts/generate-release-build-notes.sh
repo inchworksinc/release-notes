@@ -109,13 +109,14 @@ new_build=$(jq -nc \
     --argjson defects "$defects" \
     '{timestamp: $ts, revision: $rev, stories: $stories, defects: $defects}')
 
-echo "=== Downloading prod-release-notes.json from latest release ==="
+echo "=== Downloading production release notes json from latest release ==="
 if [ -n "$latest_tag" ]; then
-    if gh release download -p "prod-release-notes.json" 2>/dev/null; then
-        echo "=== Downloaded existing prod-release-notes.json from $latest_tag ==="
+    if gh release download -p "${PACKAGE_NAME}" 2>/dev/null; then
+        echo "=== Found an asset package with name ${PACKAGE_NAME} from $latest_tag ==="
+        unzip ${PACKAGE_NAME}
         existing=$(cat prod-release-notes.json)
     else
-        echo "=== No prod-release-notes.json found in latest release, creating new ==="
+        echo "=== No asset found with name ${PACKAGE_NAME} in latest release, creating new ==="
         existing='{"builds": []}'
     fi
 else
