@@ -41,7 +41,7 @@ else
 fi
 
 echo "Adding $RELEASE_NAME artifact(s)."
-gh release upload $RELEASE_NAME $ARTIFACTS_ZIP
+gh release upload $RELEASE_NAME $ARTIFACTS_ZIP --clobber
 echo "Creating release notes"
 LATEST_RELEASE_TAG=$(gh release list --exclude-drafts --exclude-pre-releases --json isLatest,tagName --jq '.[]| select(.isLatest)|.tagName')
 if [ -z "${LATEST_RELEASE_TAG}" ];then

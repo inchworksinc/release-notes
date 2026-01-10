@@ -9,7 +9,7 @@ echo "=== Starting release build release notes generation ==="
 # 2. If no previous release, get all commits
 # ============================================================================
 echo "=== Determining commit range ==="
-latest_tag=$(gh release list --limit 1 --json tagName -q '.[0].tagName // ""' 2>/dev/null || echo "")
+latest_tag=$(gh release view --json tagName -q '.tagName // ""' 2>/dev/null || echo "")
 if [ -n "$latest_tag" ]; then
     echo "=== Generating release notes from $latest_tag to current HEAD ==="
     START_REF="$latest_tag"
@@ -111,11 +111,11 @@ new_build=$(jq -nc \
 
 echo "=== Downloading prod-release-notes.json from latest release ==="
 if [ -n "$latest_tag" ]; then
-    if gh release download "$latest_tag" -p "prod-release-notes.json" 2>/dev/null; then
+    if gh release download -p "prod-release-notes.json" 2>/dev/null; then
         echo "=== Downloaded existing prod-release-notes.json from $latest_tag ==="
         existing=$(cat prod-release-notes.json)
     else
-        echo "=== No prod-release-notes.json found in $latest_tag, creating new ==="
+        echo "=== No prod-release-notes.json found in latest release, creating new ==="
         existing='{"builds": []}'
     fi
 else
@@ -132,3 +132,5 @@ updated=$(echo "$existing" | jq \
 echo "$updated" > prod-release-notes.json
 
 echo "=== Release notes file prod-release-notes.json updated ==="
+
+cat prod-release-notes.json
