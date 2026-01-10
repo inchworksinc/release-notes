@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "timestamp": "2026-01-10T00:00:02Z",
+      "revision": "39e9a35c814286b7d83421ff36aab00b187e8b97",
+      "stories": [
+        {
+          "description": "fix: Correcting release notes creation process",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    }
+  ]
+}
