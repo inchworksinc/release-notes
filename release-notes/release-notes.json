@@ -2,6 +2,18 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T17:14:56Z",
+      "revision": "c486f0676042d90e0a10e1ab11023a95361aef24",
+      "stories": [
+        {
+          "description": "release action updates",
+          "branch": "release/4.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T16:48:42Z",
       "revision": "69832472717dc744ebda4006157f8a51a65963f7",
       "stories": [
@@ -67772,18 +67784,6 @@
       ],
       "defects": [],
       "revision": "bf2f126f01b22694718ea52c9de58c14a7ccaa66"
-    },
-    {
-      "timestamp": "2025-10-28 03:47:21",
-      "stories": [
-        {
-          "description": "GSS-26341 changes to have period start date for pre renewal policy",
-          "branch": "",
-          "author": "Iswarya Asokan"
-        }
-      ],
-      "defects": [],
-      "revision": "1deabdbed91ec1dc4b81a844a7d54545367fb80e"
     }
   ]
 }
