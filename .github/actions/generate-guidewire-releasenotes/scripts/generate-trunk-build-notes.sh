@@ -125,3 +125,5 @@ updated=$(echo "$existing" | jq \
 echo "$updated" > "$OUTPUT_FILE"
 
 echo "=== Daily release notes saved to ${OUTPUT_FILE} ==="
+
+cat prod-release-notes.json
