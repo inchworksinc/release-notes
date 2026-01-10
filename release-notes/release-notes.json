@@ -2,6 +2,23 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T16:43:08Z",
+      "revision": "ab32a45241b4504b4afa4399c13df85dc4d0c59f",
+      "stories": [
+        {
+          "description": "fix: trunk notes update",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: release notes updates",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T16:38:06Z",
       "revision": "e08916595f21241efa33d1ca88b92974b6d3ceca",
       "stories": [
@@ -67772,33 +67789,6 @@
       ],
       "defects": [],
       "revision": "8ffa8d2089cb8259b1083e3ff503771e5b1671d5"
-    },
-    {
-      "timestamp": "2025-10-24 03:47:21",
-      "stories": [
-        {
-          "description": "GSS-31138: Effective date of the deductible rates should be set as 9/30/2025, for the unretired ones 25k, 50K & 75K originally fixed as part of GSS-28394. (#7215)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Pavani Raghupathi"
-        },
-        {
-          "description": "GSS-27067 Added null safe check to avoid exception",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-27067 - Avoiding mortgagee change activity creation for the existing upload doc which already have activity created and approved",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-26925 Resolved merge conflicts",
-          "branch": "",
-          "author": "Iswarya Asokan"
-        }
-      ],
-      "defects": [],
-      "revision": "8f5c1b66386a4857a07527aace9382f64f08c7df"
     }
   ]
 }
