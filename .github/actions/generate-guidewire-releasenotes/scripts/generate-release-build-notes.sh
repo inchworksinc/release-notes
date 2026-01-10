@@ -111,7 +111,7 @@ new_build=$(jq -nc \
 
 echo "=== Downloading prod-release-notes.json from latest release ==="
 if [ -n "$latest_tag" ]; then
-    if gh release download --latest -p "prod-release-notes.json" 2>/dev/null; then
+    if gh release download -p "prod-release-notes.json" 2>/dev/null; then
         echo "=== Downloaded existing prod-release-notes.json from $latest_tag ==="
         existing=$(cat prod-release-notes.json)
     else
