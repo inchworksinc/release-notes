@@ -2,6 +2,23 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T01:35:43Z",
+      "revision": "ed83f57bf5d3107f14d5aaa2305989f8be217dcb",
+      "stories": [
+        {
+          "description": "fix: bump version",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: path to release branch notes",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T01:23:45Z",
       "revision": "8498742bed5c7dd2f015414772e38db3b934c7a1",
       "stories": [
@@ -67772,18 +67789,6 @@
       ],
       "defects": [],
       "revision": "454151fc28a05f91aaeb06308c34a030bc3cf57b"
-    },
-    {
-      "timestamp": "2025-10-18 03:47:11",
-      "stories": [
-        {
-          "description": "GSS-24743 - PC Remove Special characters from SmartComm Payload XML (#7156)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Karthik Sakthivel"
-        }
-      ],
-      "defects": [],
-      "revision": "5f94b4ad1ca75c7735748a278d92e940486f3acf"
     }
   ]
 }
