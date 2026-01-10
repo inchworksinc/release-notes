@@ -2,6 +2,18 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T16:38:06Z",
+      "revision": "e08916595f21241efa33d1ca88b92974b6d3ceca",
+      "stories": [
+        {
+          "description": "Testing release notes generation",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T16:35:26Z",
       "revision": "ae7255129bb2b0024e7dafa7e6717f30c329ff3a",
       "stories": [
@@ -67787,23 +67799,6 @@
       ],
       "defects": [],
       "revision": "8f5c1b66386a4857a07527aace9382f64f08c7df"
-    },
-    {
-      "timestamp": "2025-10-23 03:46:31",
-      "stories": [
-        {
-          "description": "GSS-30369: fix for UW issue not refreshing during submission",
-          "branch": "",
-          "author": "Binaya Samad"
-        },
-        {
-          "description": "GSS-20226: PolicyCenter_ProducerEngage_ Error associated with Year replaced fields persisting incorrectly",
-          "branch": "",
-          "author": "Jebamalai Princy"
-        }
-      ],
-      "defects": [],
-      "revision": "34269f90efd0489cd4f8eb246bfc976b131ec210"
     }
   ]
 }
