@@ -106,12 +106,12 @@ new_build=$(jq -nc \
     --argjson defects "$defects" \
     '{timestamp: $ts, revision: $rev, stories: $stories, defects: $defects}')
 
-echo "=== Creating directory for release notes if it doesn't exist ==="
-mkdir -p "$(dirname "$OUTPUT_PATH")"
+echo "=== Creating empty release notes if it doesn't exist ==="
+mkdir -p "$(dirname "$OUTPUT_FILE")"
 
 # Load existing daily release notes or create new
-if [ -f "$OUTPUT_PATH" ]; then
-    existing=$(cat "$OUTPUT_PATH")
+if [ -f "$OUTPUT_FILE" ]; then
+    existing=$(cat "$OUTPUT_FILE")
 else
     existing='{"builds": []}'
 fi
@@ -122,6 +122,6 @@ updated=$(echo "$existing" | jq \
     '.builds = [$build] + .builds | .builds = .builds[:50]')
 
 # Save
-echo "$updated" > "$OUTPUT_PATH"
+echo "$updated" > "$OUTPUT_FILE"
 
-echo "=== Daily release notes saved to ${OUTPUT_PATH} ==="
+echo "=== Daily release notes saved to ${OUTPUT_FILE} ==="
