@@ -9,6 +9,9 @@ inputs:
   OUTPUT_FILE: 
     description: The output file for trunk release notes
     required: false
+  GIT_TOKEN: 
+    description: GitHub token for authentication
+    required: true
   
 runs:
   using: "composite"
@@ -17,7 +20,7 @@ runs:
       shell: bash
       if: startsWith(github.ref_name, 'main')
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ inputs.GIT_TOKEN }}
         OUTPUT_FILE: ${{ inputs.OUTPUT_FILE }}
       run: |
         bash ${{ github.action_path }}/scripts/generate-trunk-build-notes.sh
@@ -41,7 +44,7 @@ runs:
       shell: bash
       if: startsWith(github.ref_name, 'release/**')
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ inputs.GIT_TOKEN }}
         RELEASE_VERSION: ${{ inputs.RELEASE_VERSION }}
       run: |
         bash .github/scripts/generate-release-build-notes.sh

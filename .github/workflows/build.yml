@@ -26,6 +26,7 @@ jobs:
         with:
           OUTPUT_FILE: release-notes/trunk-release-notes.json
           RELEASE_VERSION: v$(cat ./version.json | jq -r '.version')
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Uploading application and infrastructure artifacts to Github Releases
         if: startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'hotfix')
