@@ -2,6 +2,28 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T01:23:45Z",
+      "revision": "8498742bed5c7dd2f015414772e38db3b934c7a1",
+      "stories": [
+        {
+          "description": "fix: Adding token",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: Adding token",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: Adding release notes action",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T00:11:48Z",
       "revision": "3890a0197b1f32f6d48db33fcafe7f9741066b42",
       "stories": [
@@ -67762,28 +67784,6 @@
       ],
       "defects": [],
       "revision": "5f94b4ad1ca75c7735748a278d92e940486f3acf"
-    },
-    {
-      "timestamp": "2025-10-17 03:55:19",
-      "stories": [
-        {
-          "description": "GSS-30838: Policy Change has Dispatch Status set to Cancel for Print incorrectly (#7148)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Pravallika Madhavarapu"
-        },
-        {
-          "description": "GSS-29815 - Update to use the Dwellings count vs Location (#7133) (#7146)",
-          "branch": "",
-          "author": "Travis Kuhns"
-        },
-        {
-          "description": "GSS-99999 - Only trigger Activity for buildings which have building coverage.  Also, prevent the validation hang-up with mandatory valuation id (#7145)",
-          "branch": "",
-          "author": "Travis Kuhns"
-        }
-      ],
-      "defects": [],
-      "revision": "593709bb2610a303e6e883107f162ad22a2115d8"
     }
   ]
 }
