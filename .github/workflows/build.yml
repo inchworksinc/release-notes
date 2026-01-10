@@ -21,38 +21,11 @@ jobs:
         with:
           fetch-depth: 0  # Full history needed for git log
 
-      ### Trunk build release notes generation ###
-      - name: Generate trunk build release notes
-        if: startsWith(github.ref_name, 'main')
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate release notes
+        uses: ./.github/actions/generate-guidewire-releasenotes
+        with:
           OUTPUT_FILE: release-notes/trunk-release-notes.json
-        run: |
-          bash .github/scripts/generate-trunk-build-notes.sh
-
-      - name: Commit and push trunk release notes
-        if: startsWith(github.ref_name, 'main')
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add release-notes/${{ steps.build-type.outputs.output_file }}
-
-          # Only commit if there are changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: update release notes [skip ci]"
-            git push
-          fi
-
-      ### Release build release notes generation ###
-      - name: Generate release build release notes
-        if: startsWith(github.ref_name, 'release/**')
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_VERSION: v$(cat ./version.json | jq -r '.version')
-        run: |
-          bash .github/scripts/generate-release-build-notes.sh
 
       - name: Uploading application and infrastructure artifacts to Github Releases
         if: startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'hotfix')
