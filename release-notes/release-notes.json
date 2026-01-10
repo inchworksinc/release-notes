@@ -2,6 +2,68 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-10T16:33:14Z",
+      "revision": "9fa3d45904c1b6df610b6e8d1a6a4fafdb738f12",
+      "stories": [
+        {
+          "description": "fix: Adding release notes updated",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "getting commits from latest all the time",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: release notes download",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "fix: release upload and download",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "testing release notes",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "testing release notes",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "test: adding commit for test",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "feat: test commit",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "correcting path",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "correcting the release notes",
+          "branch": "release/3.0.0",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "correcting the release notes",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-10T01:35:43Z",
       "revision": "ed83f57bf5d3107f14d5aaa2305989f8be217dcb",
       "stories": [
@@ -67757,38 +67819,6 @@
       ],
       "defects": [],
       "revision": "1501f587dbd829ca0959f945913ff468bad275ed"
-    },
-    {
-      "timestamp": "2025-10-21 03:47:10",
-      "stories": [
-        {
-          "description": "GSS-30838: Policy Change has Dispatch Status set to Cancel for Print incorrectly (#7163)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Pravallika Madhavarapu"
-        },
-        {
-          "description": "GSS-26068 Code changes to pick correct risk unit address when added on PE",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-26068 Changed code to pick correct policy location associated to risk unit and added mapping to capture order number for RRI",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-26068 Changed code to pick correct policy location associated to risk unit and added mapping to capture order number for RRI",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-26068 Changed code to pick correct policy location associated to risk unit and added mapping to capture order number for RRI",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        }
-      ],
-      "defects": [],
-      "revision": "454151fc28a05f91aaeb06308c34a030bc3cf57b"
     }
   ]
 }
