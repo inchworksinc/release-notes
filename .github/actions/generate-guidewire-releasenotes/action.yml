@@ -44,6 +44,7 @@ runs:
           echo "No changes to commit"
         else
           git commit -m "chore: update release notes [skip ci]\n\nskip-checks: true"
+          git pull --ff-only
           git push
         fi
     - name: Generate release build release notes
