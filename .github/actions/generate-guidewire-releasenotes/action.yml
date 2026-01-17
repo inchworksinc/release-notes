@@ -39,9 +39,9 @@ runs:
         
         echo ${GIT_TOKEN}
         # Configure git to use the provided token
-        #git remote set-url origin https://${GIT_TOKEN}@github.com/inchworksinc/release-notes.git
-        git remote set-url origin https://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@github.com/inchworksinc/release-notes.git
-        
+        git remote set-url origin https://${GIT_TOKEN}@github.com/inchworksinc/release-notes.git
+       
+
         git add ${{ inputs.OUTPUT_FILE }}
 
         # Only commit if there are changes
