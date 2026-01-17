@@ -121,7 +121,4 @@ updated=$(echo "$existing" | jq \
     --argjson build "$new_build" \
     '.builds = [$build] + .builds | .builds = .builds[:50]')
 
-# Save
-echo "$updated" > "$OUTPUT_FILE"
-
 echo "=== Daily release notes saved to ${OUTPUT_FILE} ==="
