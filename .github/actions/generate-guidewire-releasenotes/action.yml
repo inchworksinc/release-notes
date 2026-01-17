@@ -43,7 +43,7 @@ runs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "chore: update release notes [skip ci]"
+          git commit -m "chore: update release notes [skip ci]\n\nskip-checks: true"
           git push
         fi
     - name: Generate release build release notes
