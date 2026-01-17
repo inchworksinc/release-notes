@@ -2,6 +2,18 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-17T21:17:34Z",
+      "revision": "84b54aadea743189a5e82d4bfb77e385793f6c18",
+      "stories": [
+        {
+          "description": "Commit 22",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-17T21:14:31Z",
       "revision": "f0dc4c2cc7d3bd072639e73f221bdfaaae96d45d",
       "stories": [
@@ -67787,33 +67799,6 @@
       ],
       "defects": [],
       "revision": "25e231683f8e5ec4ec1aa0dc42af4f2bb88d0fcc"
-    },
-    {
-      "timestamp": "2025-10-30 03:46:17",
-      "stories": [
-        {
-          "description": "GSS - 30838: Policy Change has Dispatch Status set to Cancel for Print incorrectly (#7263)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Pravallika Madhavarapu"
-        },
-        {
-          "description": "GSS-27114 - Combine Insurview and Insurance Score(NCF) calls _PO (#7262)",
-          "branch": "",
-          "author": "Pavani Raghupathi"
-        },
-        {
-          "description": "Bulk producer feature flag updates (#7188)",
-          "branch": "",
-          "author": "Maddakam Kanchana"
-        },
-        {
-          "description": "GSS - 29397: Modify Dwelling Type and Rewrite Reason Options after PO issuances for Home policies (#7251)",
-          "branch": "",
-          "author": "Pravallika Madhavarapu"
-        }
-      ],
-      "defects": [],
-      "revision": "0352fcc7f015b2a6157639a2d3efe52fa9758d46"
     }
   ]
 }
