@@ -36,6 +36,9 @@ runs:
         echo ${{ inputs.OUTPUT_FILE }}
         git config --local user.email "datlaanjaneya@yahoo.com"
         git config --local user.name "anjaneya-bot"
+        
+        # Configure git to use the provided token
+        git remote set-url origin https://${GIT_TOKEN}@github.com/inchworksinc/release-notes.git
 
         git add ${{ inputs.OUTPUT_FILE }}
 
