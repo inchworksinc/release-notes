@@ -34,8 +34,8 @@ runs:
       run: |
 
         echo ${{ inputs.OUTPUT_FILE }}
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --local user.email "datlaanjaneya@yahoo.com"
+        git config --local user.name "anjaneya-bot"
 
         git add ${{ inputs.OUTPUT_FILE }}
 
@@ -48,6 +48,8 @@ runs:
           git pull --ff-only
           git push
         fi
+      env:
+        GIT_TOKEN: ${{ inputs.GIT_TOKEN }}
     - name: Generate release build release notes
       shell: bash
       if: startsWith(github.ref_name, 'release/')
