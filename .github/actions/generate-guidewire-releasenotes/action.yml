@@ -32,7 +32,7 @@ runs:
       shell: bash
       if: startsWith(github.ref_name, 'main')
       run: |
-      
+
         echo ${{ inputs.OUTPUT_FILE }}
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
@@ -43,7 +43,7 @@ runs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "chore: update release notes [skip ci]\n\nskip-checks: true"
+          git commit -m "chore: update release notes [skip ci]\n\nskip-checks: true"  --cleanup=verbatim
 
           git pull --ff-only
           git push
