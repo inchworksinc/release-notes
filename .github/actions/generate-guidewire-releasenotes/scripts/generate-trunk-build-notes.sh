@@ -122,3 +122,5 @@ updated=$(echo "$existing" | jq \
     '.builds = [$build] + .builds | .builds = .builds[:50]')
 
 echo "=== Daily release notes saved to ${OUTPUT_FILE} ==="
+
+cat "${OUTPUT_FILE}"
