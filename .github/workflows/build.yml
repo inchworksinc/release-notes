@@ -7,9 +7,9 @@ on:
   #     - 'release/**'
   workflow_dispatch:
 
-permissions:
-  contents: write  # Need write permission to commit back to repo
-  pull-requests: read  # Need to read PR information
+# permissions:
+#   contents: write  # Need write permission to commit back to repo
+#   pull-requests: read  # Need to read PR information
 
 jobs:
   generate-release-notes:
@@ -26,8 +26,8 @@ jobs:
         with:
           OUTPUT_FILE: release-notes/release-notes.json
           RELEASE_VERSION: v$(cat ./version.json | jq -r '.version')
-          #GIT_TOKEN: ${{ vars.BOT_PAT }}
-          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_TOKEN: ${{ secrets.BOT_PAT }}
+          #GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ASSET_PACKAGE_NAME: app-package.zip
 
       - name: Uploading application and infrastructure artifacts to Github Releases
