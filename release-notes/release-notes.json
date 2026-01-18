@@ -2,6 +2,43 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-18T15:58:33Z",
+      "revision": "d73c0c605686a14ef67d705b2e93624b9ae273e0",
+      "stories": [
+        {
+          "description": "Commit 23.3",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Commit 23.2",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Commit 23.1",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Commit 23",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Commit 23",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        },
+        {
+          "description": "Commit 22",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-17T21:17:34Z",
       "revision": "84b54aadea743189a5e82d4bfb77e385793f6c18",
       "stories": [
@@ -67777,28 +67814,6 @@
       ],
       "defects": [],
       "revision": "475a7f300aa612e8751c204e382119a71b8d9a34"
-    },
-    {
-      "timestamp": "2025-10-31 03:46:16",
-      "stories": [
-        {
-          "description": "GSS-31199 Added condition to filter out forms that are removed during change",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-31199 Added condition to filter out forms that are removed during change",
-          "branch": "",
-          "author": "Shirisha.Devarakonda"
-        },
-        {
-          "description": "GSS-26341 changes to have renewal effective date",
-          "branch": "",
-          "author": "Iswarya Asokan"
-        }
-      ],
-      "defects": [],
-      "revision": "25e231683f8e5ec4ec1aa0dc42af4f2bb88d0fcc"
     }
   ]
 }
