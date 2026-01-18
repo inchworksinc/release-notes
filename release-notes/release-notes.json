@@ -2,6 +2,12 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-18T16:38:40Z",
+      "revision": "9dbfa666e6823fe4dd78a83e5ca965479e06e003",
+      "stories": [],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-18T15:58:33Z",
       "revision": "d73c0c605686a14ef67d705b2e93624b9ae273e0",
       "stories": [
@@ -67802,18 +67808,6 @@
       ],
       "defects": [],
       "revision": "8fc76ce49abea14657c34ab22e43f1689395c4e4"
-    },
-    {
-      "timestamp": "2025-11-04 03:46:47",
-      "stories": [
-        {
-          "description": "GSS-31403 - For class code 13930 and the dropdown for coverage is empty (#7280)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Vishnu Thota"
-        }
-      ],
-      "defects": [],
-      "revision": "475a7f300aa612e8751c204e382119a71b8d9a34"
     }
   ]
 }
