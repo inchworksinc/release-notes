@@ -2,6 +2,18 @@
   "center": "Policy Center",
   "builds": [
     {
+      "timestamp": "2026-01-19T17:39:13Z",
+      "revision": "0db6aa182cfbe4d5f1423558c51a6addc4b33d8e",
+      "stories": [
+        {
+          "description": "fix: change the logout token",
+          "branch": "main",
+          "author": "anjaneya.datla@fbitn.com"
+        }
+      ],
+      "defects": []
+    },
+    {
       "timestamp": "2026-01-19T17:14:40Z",
       "revision": "cef49ebe4479fb24f6229828871b11349d5ecadc",
       "stories": [],
@@ -67760,18 +67772,6 @@
       ],
       "defects": [],
       "revision": "fdd365b738d599b3c6de50a8e1487f8f9cfb3e21"
-    },
-    {
-      "timestamp": "2025-11-07 03:46:31",
-      "stories": [
-        {
-          "description": "GSS-27114 - Combine Insurview and Insurance Score(NCF) calls _PO : Logger Changes (#7310)",
-          "branch": "(HEAD, origin/release/4.9.0)",
-          "author": "Pavani Raghupathi"
-        }
-      ],
-      "defects": [],
-      "revision": "9231da8e4addf44e252d97ea7017b05a854a7fb3"
     }
   ]
 }
